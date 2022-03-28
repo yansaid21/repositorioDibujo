@@ -21,12 +21,44 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
-        Cuadrado cuadrado1= new Cuadrado(10, 10, Color.black, Color.red, 90);
-        Circulo circulo1=new Circulo(100, 10, Color.blue, Color.green, 70);
-        Imagen elHongo=new Imagen(10, 100, "src/Imagenes/hongo.png", 64, 64);
-        this.lienzo1.getFiguras().add(cuadrado1);
-        this.lienzo1.getFiguras().add(circulo1);
-        this.lienzo1.getFiguras().add(elHongo);
+        int matriz[][]={{0,0,3,4,0,0,0,1},
+                        {0,0,0,0,0,0,0,0},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,1,1,1,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1}};
+        llamadoColores(matriz);
+    }
+        
+        
+        Cuadrado cuadrado1= new Cuadrado(240, 0, Color.black, Color.red, 30);
+//        Circulo circulo1=new Circulo(100, 10, Color.blue, Color.green, 70);
+//        Imagen elHongo=new Imagen(10, 100, "src/Imagenes/hongo.png", 64, 64);
+//        this.lienzo1.getFiguras().add(cuadrado1);
+//        this.lienzo1.getFiguras().add(circulo1);
+//        this.lienzo1.getFiguras().add(elHongo);
+    
+    public void llamadoColores(int matriz[][]){
+        for (int y = 0; y < 480; y=y+30) {
+            for (int x = 0; x < 240; x=x+30) {
+                if(matriz [y][x]==0){
+          Cuadrado elCuadrado = new Cuadrado(x, y, Color.black, Color.red, 30);          
+          this.lienzo1.getFiguras().add(elCuadrado);
+                }
+          
+          
+            }
+        }
     }
 
     /**
