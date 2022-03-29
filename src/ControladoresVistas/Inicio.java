@@ -47,6 +47,37 @@ public class Inicio extends javax.swing.JFrame {
                            };
         
         primero(matrizColores);
+        int matriz[][]={{0,0,3,4,0,0,0,1},
+                        {0,0,0,0,0,0,0,0},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,1,1,1,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1},
+                        {1,1,1,1,4,0,0,1}};
+        llamadoColores(matriz);
+    }
+        
+
+    public void llamadoColores(int matriz[][]){
+        for (int y = 0; y < 480; y=y+30) {
+            for (int x = 0; x < 240; x=x+30) {
+                if(matriz [y][x]==0){
+          Cuadrado elCuadrado = new Cuadrado(x, y, Color.black, Color.red, 30);          
+          this.lienzo1.getFiguras().add(elCuadrado);
+                }
+          
+          
+            }
+        }
     }
     
     
