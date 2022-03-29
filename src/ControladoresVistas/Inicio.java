@@ -24,10 +24,72 @@ public class Inicio extends javax.swing.JFrame {
         Cuadrado cuadrado1= new Cuadrado(10, 10, Color.black, Color.red, 90);
         Circulo circulo1=new Circulo(100, 10, Color.blue, Color.green, 70);
         Imagen elHongo=new Imagen(10, 100, "src/Imagenes/hongo.png", 64, 64);
-        this.lienzo1.getFiguras().add(cuadrado1);
-        this.lienzo1.getFiguras().add(circulo1);
-        this.lienzo1.getFiguras().add(elHongo);
+//        this.lienzo1.getFiguras().add(cuadrado1);
+//        this.lienzo1.getFiguras().add(circulo1);
+//        this.lienzo1.getFiguras().add(elHongo);
+        int  matrizColores [][]={
+                            {0,0,0,0,0,1,1,1}, //
+                            {0,0,0,0,1,1,1,1},//
+                            {0,0,0,0,2,2,2,5},//
+                            {0,0,0,2,5,2,5,5}, //
+                            {0,0,0,2,5,2,2,5},//
+                            {0,0,0,0,2,5,5,5}, //
+                            {0,0,0,0,0,5,5,5}, //
+                            {0,0,0,0,1,1,4,1},//
+                            {0,0,0,1,1,1,4,1},//
+                            {0,0,1,1,1,1,4,4},//
+                            {0,0,5,5,1,4,5,4},//
+                            {0,0,5,5,5,4,4,4},//
+                            {0,0,5,5,4,4,4,4},//
+                            {0,0,0,0,4,4,4,0},//
+                            {0,0,0,2,2,2,0,0},
+                            {0,0,2,2,2,2,0,0},
+                           };
+        
+        primero(matrizColores);
     }
+    
+    
+            
+    
+    
+    public void primero(int matrizColores[][]){
+        Color brown=new Color(78, 59, 49);
+        int y=0;
+        for (int j = 0; j < 16; j++) {
+            y=y+30;
+            int x=0;
+            for (int i = 0; i < 8; i++) {
+                x=x+30;
+                if (matrizColores[j][i]==0){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, Color.WHITE, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+                if (matrizColores[j][i]==1){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, Color.RED, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+                if (matrizColores[j][i]==2){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, brown, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+                if (matrizColores[j][i]==3){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, Color.BLACK, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+                if (matrizColores[j][i]==4){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, Color.BLUE, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+                if (matrizColores[j][i]==5){
+                    Cuadrado nuevoCuadrado=new Cuadrado(x, y, Color.BLACK, Color.YELLOW, 30);
+                    this.lienzo1.getFiguras().add(nuevoCuadrado);
+                }
+            }
+        }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,17 +104,15 @@ public class Inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lienzo1.setBackground(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout lienzo1Layout = new javax.swing.GroupLayout(lienzo1);
         lienzo1.setLayout(lienzo1Layout);
         lienzo1Layout.setHorizontalGroup(
             lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 659, Short.MAX_VALUE)
+            .addGap(0, 733, Short.MAX_VALUE)
         );
         lienzo1Layout.setVerticalGroup(
             lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGap(0, 516, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -61,15 +121,15 @@ public class Inicio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lienzo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(57, 57, 57))
+                .addComponent(lienzo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lienzo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(lienzo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();

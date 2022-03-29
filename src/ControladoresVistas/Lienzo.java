@@ -35,6 +35,7 @@ public class Lienzo extends javax.swing.JPanel {
         super.paintComponent(g);
         dibujarFiguras(g);
     }
+    
     public void dibujarFiguras(Graphics g){
         for(FiguraGeometrica figuraActual: this.figuras){
             if (figuraActual instanceof Cuadrado) {
@@ -83,6 +84,18 @@ public class Lienzo extends javax.swing.JPanel {
                 this);
     }
 
+    //cambia el color y las coordenadas
+//    public void coordenadas(Graphics G){
+//        //llenar hacia la derecha
+//        for (int i = 0; i < 480; i=i+30) {
+//            
+//        }
+//    }
+    
+    //public void primerParte(){
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,11 +109,11 @@ public class Lienzo extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 761, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 501, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
